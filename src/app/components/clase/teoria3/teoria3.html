@@ -1,1 +1,22 @@
-<p>teoria3 works!</p>
+<h1 class="text-center">Mis productos</h1>
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card shadow-sm">
+      <img [src]="miProducto.imageUrl" class="card-img-top"
+           [alt]="miProducto.title">
+      <div class="card-header">
+        <h4 class="card-title">{{miProducto.title}}</h4>
+      </div>
+      <div class="card-body">
+        <p class="badge rounded-pill bg-primary text-capitalize">{{miProducto.category}}</p>
+        <p>{{miProducto.description}}</p>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-between">
+          <div><p>{{miProducto.price | currency: 'EUR'}}</p></div>
+          <div><p class="text-success">{{miProducto.rating?.rate}}</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

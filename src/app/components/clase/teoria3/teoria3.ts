@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { SpecialUser, Superpower, User, Usuario } from '../../../common/interfaces';
+import { Product } from '../../../models/models';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [CurrencyPipe],
   selector: 'app-teoria3',
   styleUrl: './teoria3.css',
   templateUrl: './teoria3.html',
@@ -41,12 +43,26 @@ export class Teoria3 {
     phoneNumber: '1234',
   };
 
-  superUser: SpecialUser ={
+  superUser: SpecialUser = {
     superpower: 'fly',
     id: '3',
     name: 'Super Sara',
     email: 'super.sara.doe@digitechfp.com',
     role: 'guest',
+  };
+
+  miProducto: Product = {
+    id: '1',
+    title: 'Camiseta',
+    price: 18.99,
+    description: 'Camiseta molona',
+    category: 'clothing',
+    imageUrl:
+      'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTwRR_8iakHdwNPEjWcUBmjBG2IiFYvqstT3xZAzOhrymChQtMGC6iVGDTbLV4DigrKR4JbD3zO8vy99FaGTfYoYm5nQeJCDCiLofizYq1UtoHEvH0oP3SbjwMG81YL4FF3haMawtg&usqp=CAc',
+    rating: {
+      count: 123467,
+      rate: 4.5,
+    },
   };
 
   pruebas() {
