@@ -1,3 +1,23 @@
-<ngb-alert type="info">
-  ¡Cupón del día! Usa ANGULAR21 para obtener un 10% de descuento. 🚀
-</ngb-alert>
+@if (!isUserLoggedIn){
+  <ngb-alert type="info">
+    ¡Inicia sesión para acumular puntos de fidelidad en tu próxima compra!
+  </ngb-alert>
+} @else{
+  @switch (userType){
+    @case ('regular'){
+      <ngb-alert type="secondary">
+        ¡Bienvenido de vuelta! Explora nuestras novedades del día.
+      </ngb-alert>
+    }
+    @case ('premium'){
+      <ngb-alert type="warning">
+        Socio Premium: Disfruta de un 10% de descuento automático.      </ngb-alert>
+    }
+    @case ('VIP'){
+      <ngb-alert type="dark">
+        Socio VIP: Tienes envío gratuito garantizado y un 20% de descuento en todo el catálogo.      </ngb-alert>
+    }
+  }
+}
+
+

@@ -9,4 +9,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PromoBannerComponent {
   cerrarAlert: boolean = true;
+  isUserLoggedIn: boolean = true;
+  userType: 'regular' | 'VIP' | 'premium' = 'regular';
+
 }

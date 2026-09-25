@@ -3,6 +3,7 @@ import { Inicio } from './components/web/inicio/inicio';
 import { Teoria3 } from './components/clase/teoria3/teoria3';
 import { Teoria4 } from './components/clase/teoria4/teoria4';
 import { Teoria5 } from './components/clase/teoria5/teoria5';
+import { CategoriesListComponent } from './components/web/categories-list-component/categories-list-component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: 'clase/teoria5',
     component: Teoria5
+  },
+  {
+    path: 'web/categories-list',
+    component: CategoriesListComponent
   },
   {
     path: '**',
