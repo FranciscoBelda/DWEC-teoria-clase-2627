@@ -1,0 +1,129 @@
+<h1 class="text-center text-secondary">
+  Teoría 5 - Control Flow Nativo
+</h1>
+
+<div class="row">
+  <div class="col-4">
+    <h2 class="text-primary">&#64;for</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        <li>Pos {{$index}}: Valor{{i}}</li>
+      }
+    </ul>
+
+  </div>
+  <div class="col-4">
+    <h2 class="text-primary">&#64;for dinámico</h2>
+    <p><button class="btn btn-outline-success"
+               (click)="add()">ADD</button>
+      <button class="btn btn-outline-danger"
+              (click)="remove()">REMOVE</button>
+    </p>
+    <ul>
+      @for (i of elementos; track i){
+        <li>Pos {{$index}}: Valor{{i}}</li>
+      } @empty {
+        <p class="text-muted">No hay elementos !</p>
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <h2 class="text-primary">&#64;empty</h2>
+    <ul>
+      @for (i of []; track i){
+        <li>Pos {{$index}}: Valor{{i}}</li>
+      } @empty {
+        <p class="text-muted">No hay elementos !</p>
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <h2 class="text-primary">$even</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        @if ($even){
+          <li>Pos {{$index}}: Valor{{i}}</li>
+        }
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <h2 class="text-primary">$odd</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        @if ($odd){
+          <li>Pos {{$index}}: Valor{{i}}</li>
+        }
+      }
+    </ul>
+  </div>
+
+  <div class="col-4">
+    <h2 class="text-primary">$count</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        <li>Pos {{$index}}: Valor{{i}} de
+          <strong>{{$count}}</strong> valores</li>
+      }
+    </ul>
+  </div>
+  <div class="col-6">
+    <h2 class="text-primary text-center">$first</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        @if ($first){
+          <li><span class="fw-bold text-primary">FIRST:</span>
+            Valor{{i}}</li>
+        } @else {
+          <li>Pos {{$index}}: Valor{{i}}</li>
+        }
+      }
+    </ul>
+  </div>
+  <div class="col-6">
+    <h2 class="text-primary text-center">$last</h2>
+    <ul>
+      @for (i of [6,5,4,3,2,1]; track i){
+        @if ($last){
+          <li><span class="fw-bold text-danger">LAST:</span>
+            Valor{{i}}</li>
+        } @else {
+          <li>Pos {{$index}}: Valor{{i}}</li>
+        }
+      }
+    </ul>
+  </div>
+  <div class="col-4">
+    <h2 class="text-secondary text-center">&#64;if</h2>
+    <h3>1===1</h3>
+    @if (1===1){
+      <h3 class="text-success">ESTO ES VERDADERO</h3>
+    }
+  </div>
+  <div class="col-4">
+    <h2 class="text-secondary text-center">&#64;else</h2>
+    <h3>1!==1</h3>
+    @if (1!==1){
+      <h3 class="text-success">ESTO ES VERDADERO</h3>
+    } @else {
+      <h3 class="text-danger">ESTO ES FALSO</h3>
+    }
+  </div>
+  <div class="col-4">
+    <h2 class="text-secondary text-center">&#64;switch</h2>
+    <h3>switch (1)</h3>
+    @switch (dato){
+      @case (1){
+        <h3 class="text-primary">SOY EL CASO 1</h3>
+      }
+      @case (2){
+        <h3 class="text-primary">SOY EL CASO 2</h3>
+      }
+      @default {
+        <h3 class="text-primary">SOY EL CASO DEFAULT</h3>
+      }
+    }
+  </div>
+
+
+</div>
