@@ -1,0 +1,19 @@
+<div class="card h-100">
+  <div class="card-header">
+    <div class="card-title">
+      <h4>{{product.title}}</h4></div>
+  </div>
+  <img [src]="product.imageUrl"
+       [alt]="product.title" class="card-img-top p-2">
+  <div class="card-body">
+    <div class="card-text">
+      <span class="badge bg-info">{{product.category}}</span>
+    </div>
+
+  </div>
+  <div class="card-footer">
+  <div class="card-text">
+    <span class="text-danger">{{product.price | currency: 'EUR'}}</span>
+  </div>
+</div>
+</div>
