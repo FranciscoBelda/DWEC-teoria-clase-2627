@@ -5,6 +5,7 @@ import { Teoria4 } from './components/clase/teoria4/teoria4';
 import { Teoria5 } from './components/clase/teoria5/teoria5';
 import { CategoriesListComponent } from './components/web/categories-list-component/categories-list-component';
 import { CatalogComponent } from './components/web/catalog-component/catalog-component';
+import { Teoria7 } from './components/clase/teoria7/teoria7';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,9 @@ export const routes: Routes = [
   {
     path: 'clase/teoria5',
     component: Teoria5
+  },  {
+    path: 'clase/teoria7',
+    component: Teoria7
   },
   {
     path: 'web/categories-list',

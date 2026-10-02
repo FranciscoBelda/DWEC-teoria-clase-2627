@@ -1,0 +1,43 @@
+<h1 class="text-secondary">Signals</h1>
+
+<h2>Datos primitivos</h2>
+<p><strong>Signal: </strong> {{contador}}</p>
+<p><strong>Contenido de la signal: </strong> {{contador()}}</p>
+<p><strong>Contenido de la signal READONLY: </strong> {{contadorLectura()}}</p>
+<p><strong>Número: </strong> {{miContadorOriginal}}</p>
+<h2>Usuario</h2>
+<p><strong>Nombre: </strong>{{usuario().nombre}}</p>
+<p><strong>Edad: </strong>{{usuario().edad}}</p>
+
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary"
+            (click)="asignarValorSignal()">ASIGNAR</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-primary"
+            (click)="asignarValorOriginal()">ASIGNAR ORIGINAL</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-secondary"
+            (click)="incrementarContador()">SIGNAL+</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-info"
+            (click)="incrementarContadorOriginal()">VARIABLE+</button>
+  </div>
+</div>
+
+<h2>Usuarios</h2>
+<div class="row my-3">
+  <div class="col">
+    <button class="btn btn-outline-danger"
+            (click)="cambiarNombre()">Cambiar Nombre</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-outline-success"
+            (click)="cambiarNombreOK()">Cambiar Nombre OK</button>
+  </div>
+</div>
+
+
