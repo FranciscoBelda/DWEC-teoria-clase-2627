@@ -6,6 +6,7 @@ import { Teoria5 } from './components/clase/teoria5/teoria5';
 import { CategoriesListComponent } from './components/web/categories-list-component/categories-list-component';
 import { CatalogComponent } from './components/web/catalog-component/catalog-component';
 import { Teoria7 } from './components/clase/teoria7/teoria7';
+import { UserProfileComponent } from './components/web/user-profile-component/user-profile-component';
 
 export const routes: Routes = [
   {
@@ -39,6 +40,10 @@ export const routes: Routes = [
   {
     path: 'web/catalog',
     component: CatalogComponent
+  },
+  {
+    path: 'web/user-profile',
+    component: UserProfileComponent
   },
   {
     path: '**',

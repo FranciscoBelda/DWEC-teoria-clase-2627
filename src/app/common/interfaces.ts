@@ -24,3 +24,9 @@ export interface CategoryInterface {
   active: boolean;
   icon: string;
 }
+
+export interface UserProfile{
+  name: string;
+  city: string;
+  isPremium: boolean;
+}

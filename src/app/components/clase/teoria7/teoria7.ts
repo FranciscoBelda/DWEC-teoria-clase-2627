@@ -24,6 +24,9 @@ export class Teoria7 {
       console.log('Contador signal: ', this.contador());
       console.log('Usuario: ', this.usuario());
     });
+    setInterval(() => {
+      this.miContadorOriginal++;
+    })
   }
 
   asignarValorSignal(){
@@ -34,7 +37,7 @@ export class Teoria7 {
   }
 
   incrementarContador() {
-    this.contador.update(aux => aux +1);
+    this.contador.update((aux:number) => aux +1);
   }
   incrementarContadorOriginal() {
     this.miContadorOriginal++; // ANTIGUAMENTE

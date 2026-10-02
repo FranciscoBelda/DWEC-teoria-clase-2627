@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { Product } from '../../../models/models';
 import { CurrencyPipe } from '@angular/common';
 
@@ -10,4 +10,15 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ProductCardComponent {
   @Input({ required: true }) product!: Product;
+
+  stock = signal<number>(5);
+  showAlert = signal<boolean>(false);
+
+
+  decreaseStock() {
+    if (this.stock() > 0) {
+      this.stock.update(miStock => miStock-1);
+    }
+    if (this.stock() === 0) this.showAlert.set(true);
+  }
 }

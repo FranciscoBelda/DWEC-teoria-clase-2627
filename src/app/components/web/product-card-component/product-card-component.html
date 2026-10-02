@@ -9,8 +9,22 @@
     <div class="card-text">
       <span class="badge bg-info">{{product.category}}</span>
     </div>
+    <div class="card-text my-2">
+      <p>Unidades disponibles:
+        <span class="badge bg-primary">{{stock()}}</span></p>
+    </div>
+    @if (showAlert()) {
+      <div class="alert alert-danger py-2 fs-6" role="alert">
+        ¡Agotado! No puedes añadir más unidades.
+      </div>
+    }
 
+    <button class="btn btn-outline-primary w-100 my-3"
+            [disabled]="stock()===0"
+            (click)="decreaseStock()">Add To Cart</button>
   </div>
+
+
   <div class="card-footer">
   <div class="card-text">
     <span class="text-danger">{{product.price | currency: 'EUR'}}</span>
