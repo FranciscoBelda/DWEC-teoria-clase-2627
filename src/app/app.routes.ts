@@ -8,6 +8,7 @@ import { CatalogComponent } from './components/web/catalog-component/catalog-com
 import { Teoria7 } from './components/clase/teoria7/teoria7';
 import { UserProfileComponent } from './components/web/user-profile-component/user-profile-component';
 import { Teoria8 } from './components/clase/teoria8/teoria8';
+import { CartSummary } from './components/web/cart-summary/cart-summary';
 
 export const routes: Routes = [
   {
@@ -41,6 +42,10 @@ export const routes: Routes = [
   {
     path: 'web/categories-list',
     component: CategoriesListComponent
+  },
+  {
+    path: 'web/cart-summary',
+    component: CartSummary
   },
   {
     path: 'web/catalog',

@@ -1,0 +1,33 @@
+<div class="card p-4 shadow-sm border-0 max-w-md">
+  <h4 class="card-title text-primary border-bottom pb-2">
+    Resumen del pedido
+  </h4>
+  <ul class="list-group list-group-flush my-3">
+    <li class="list-group-item d-flex justify-content-between">
+      <span>SubTotal ({{itemsCount() }} items):</span>
+      <strong>{{rawSubtotal() | currency: 'EUR'}}</strong>
+    </li>
+    <li class="list-group-item d-flex justify-content-between text-success">
+      <span>Descuento ({{couponDiscount()}}%):</span>
+      <strong>{{discountAmmount() | currency: 'EUR'}}</strong>
+    </li>
+    <li class="list-group-item d-flex justify-content-between
+    text-muted fs-6">
+      <span>IVA (21%):</span>
+      <strong>{{taxAmmount() | currency: 'EUR'}}</strong>
+    </li>
+    <li class="list-group-item d-flex justify-content-between
+    fs-5 bg-light fw-bold">
+      <span>Total a pagar:</span>
+      <span class="text-primary">{{grandTotal() | currency: 'EUR'}}</span>
+    </li>
+  </ul>
+
+  <div class="d-flex gap-2">
+    <button class="btn btn-outline-secondary btn-sm w-100"
+            (click)="incrementItems()">+ Añadir Unidad</button>
+    <button class="btn btn-outline-success btn-sm w-100"
+            (click)="applySpecialCoupon()">Aplicar cupón 25%</button>
+  </div>
+
+</div>
