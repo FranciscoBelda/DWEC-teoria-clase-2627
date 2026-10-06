@@ -1,0 +1,16 @@
+<h1 class="text-secondary">Teoría 8</h1>
+
+<h2 class="text-primary">Computed</h2>
+<h4>Valores actuales</h4>
+<p><strong>Cantidad: </strong>{{quantity()}}</p>
+<p><strong>Price: </strong>{{price()}}</p>
+<div class="d-flex justify-content-center gap-2 my-2">
+  <button class="btn btn-outline-primary"
+          (click)="changePrice()">Cambiar Precio</button>
+  <button class="btn btn-outline-primary"
+          (click)="changeQuantity()">Cambiar Cantidad</button>
+</div>
+
+<h3 class="text-success text-center">
+  {{subtotal() | currency: 'EUR'}}
+</h3>
