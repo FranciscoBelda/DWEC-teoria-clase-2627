@@ -1,0 +1,26 @@
+<h1 class="text-primary">Teoría 9</h1>
+<h2 class="text-secondary">Inputs y Outputs</h2>
+<div class="row justify-content-center">
+  <div class="col">
+    <h3>Product 1</h3>
+    <app-teoria9-hijo productCategory="electronics"
+                      [productId]="1"
+                      disabled="false"
+                      [price]="1200"
+                      (onAddToCart)="onAddToCart($event)"
+                      productName="PC Gaming"/>
+  </div>
+  <div class="col">
+    <h3>Product 2</h3>
+    <app-teoria9-hijo [disabled]="true"
+                      [productId]="2"
+                      [price]="17"
+                      (onAddToCart)="onAddToCart($event)"
+                      productName="Despertador"/>
+  </div>
+</div>
+
+
+<h2 class="text-center text-success">
+  PRODUCT ID: {{productId()}}
+</h2>

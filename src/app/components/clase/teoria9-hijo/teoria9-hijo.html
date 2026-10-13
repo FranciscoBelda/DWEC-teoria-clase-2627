@@ -1,0 +1,19 @@
+<p><strong>Product name: </strong>{{productName()}}</p>
+<p><strong>Product category: </strong>
+  <span class="badge bg-primary">{{productCategory()}}</span></p>
+<p><strong>Disabled: </strong>
+  <span [class.text-success]="!disabled()"
+        [class.text-danger]="disabled()">
+    {{disabled()}}
+  </span>
+</p>
+<p><strong>Precio: </strong>
+  {{price() | currency: 'EUR'}}
+</p>
+<p><strong>Precio con IVA: </strong>
+  {{priceWithTaxes() | currency: 'EUR'}}
+</p>
+<p><button class="btn btn-outline-success"
+           (click)="addToCart(productId())">
+  ADD TO CART
+</button></p>
