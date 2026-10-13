@@ -52,7 +52,7 @@ export class Teoria3 {
   };
 
   miProducto: Product = {
-    id: '1',
+    id: '1',stock: 2,
     title: 'Camiseta',
     price: 18.99,
     description: 'Camiseta molona',

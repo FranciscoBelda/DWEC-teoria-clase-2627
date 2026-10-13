@@ -1,33 +1,44 @@
 <div class="card h-100">
   <div class="card-header">
     <div class="card-title">
-      <h4>{{product.title}}</h4></div>
+      <h4>{{product().title}}</h4></div>
   </div>
-  <img [src]="product.imageUrl"
-       [alt]="product.title" class="card-img-top p-2">
+  <img [src]="product().imageUrl"
+       [alt]="product().title" class="card-img-top p-2">
   <div class="card-body">
     <div class="card-text">
-      <span class="badge bg-info">{{product.category}}</span>
+      <span class="badge bg-info">{{product().category}}</span>
     </div>
     <div class="card-text my-2">
       <p>Unidades disponibles:
-        <span class="badge bg-primary">{{stock()}}</span></p>
+        <span class="badge bg-primary">{{product().stock}}</span></p>
     </div>
-    @if (showAlert()) {
+
+
+    @if (isLowStock()) {
+      <div class="alert alert-warning py-2 fs-6" role="alert">
+        ¡Solo quedan {{product().stock}} unidades!
+      </div>
+    }
+    @if (isOutOfStock()) {
       <div class="alert alert-danger py-2 fs-6" role="alert">
         ¡Agotado! No puedes añadir más unidades.
       </div>
     }
 
+
     <button class="btn btn-outline-primary w-100 my-3"
-            [disabled]="stock()===0"
-            (click)="decreaseStock()">Add To Cart</button>
+            [disabled]="isOutOfStock()"
+            (click)="onSelectProduct()">Add To Cart</button>
+    <button class="btn btn-outline-primary w-100 my-3"
+            [disabled]="isOutOfStock()"
+            (click)="onViewDetails()">On View Details</button>
   </div>
 
 
   <div class="card-footer">
   <div class="card-text">
-    <span class="text-danger">{{product.price | currency: 'EUR'}}</span>
+    <span class="text-danger">{{product().price | currency: 'EUR'}}</span>
   </div>
 </div>
 </div>

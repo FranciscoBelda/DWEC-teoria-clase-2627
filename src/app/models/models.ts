@@ -14,6 +14,7 @@ export interface Product {
   description: string;
   category: CategoryType;
   imageUrl: string;
+  stock: number;
   rating?: Rating;
 }
 export interface CartItem{

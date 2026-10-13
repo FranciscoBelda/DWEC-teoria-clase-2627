@@ -12,7 +12,7 @@ export class EjerciciosTema4 implements OnInit {
     {
       id: '1',
       title: 'Camiseta',
-      price: 18,
+      price: 18,stock: 2,
       description: 'Camiseta molona',
       category: 'clothing',
       imageUrl: 'imagenCamiseta.jpg',
@@ -23,7 +23,7 @@ export class EjerciciosTema4 implements OnInit {
     },
     {
       id: '2',
-      title: 'Radio',
+      title: 'Radio',stock: 2,
       price: 28,
       description: 'Radio guapa',
       category: 'electronics',
