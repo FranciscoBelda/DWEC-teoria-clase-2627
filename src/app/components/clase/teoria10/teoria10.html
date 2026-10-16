@@ -1,0 +1,10 @@
+<h1 class="text-primary">Teoría 10</h1>
+<h2 class="text-secondary">Antiguamente ...</h2>
+<app-teoria10-hijo [quantity]="1" [(quantityModern)]="data"
+                   (quantityChange)="recogerDato($event)"/>
+
+<h2 class="text-success">
+  Ahora...
+</h2>
+<p>DATA: {{data()}}</p>
+

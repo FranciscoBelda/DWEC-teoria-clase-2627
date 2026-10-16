@@ -1,0 +1,10 @@
+<div class="row">
+  @for (step of [1,2,3,4]; track $index) {
+    <div class="col">
+      <app-quantity-stepper-component [(value)]="orderQuantity"/>
+    </div>
+  }
+</div>
+
+
+<p>Cantidad total(PADRE): {{orderQuantity()}}</p>

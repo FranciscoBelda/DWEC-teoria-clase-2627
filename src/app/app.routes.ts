@@ -9,7 +9,11 @@ import { Teoria7 } from './components/clase/teoria7/teoria7';
 import { UserProfileComponent } from './components/web/user-profile-component/user-profile-component';
 import { Teoria8 } from './components/clase/teoria8/teoria8';
 import { Teoria9 } from './components/clase/teoria9/teoria9';
+import { Teoria10 } from './components/clase/teoria10/teoria10';
 import { CartSummary } from './components/web/cart-summary/cart-summary';
+import {
+  QuantityStepperParentComponent
+} from './components/web/quantity-stepper-parent-component/quantity-stepper-parent-component';
 
 export const routes: Routes = [
   {
@@ -45,6 +49,10 @@ export const routes: Routes = [
     component: Teoria9
   },
   {
+    path: 'clase/teoria10',
+    component: Teoria10
+  },
+  {
     path: 'web/categories-list',
     component: CategoriesListComponent
   },
@@ -59,6 +67,10 @@ export const routes: Routes = [
   {
     path: 'web/user-profile',
     component: UserProfileComponent
+  },
+  {
+    path: 'web/stepper',
+    component: QuantityStepperParentComponent
   },
   {
     path: '**',
