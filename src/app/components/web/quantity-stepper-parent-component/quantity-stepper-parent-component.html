@@ -1,7 +1,7 @@
 <div class="row">
   @for (step of [1,2,3,4]; track $index) {
     <div class="col">
-      <app-quantity-stepper-component [(value)]="orderQuantity"/>
+      <app-quantity-stepper-component [(quantity)]="orderQuantity"/>
     </div>
   }
 </div>

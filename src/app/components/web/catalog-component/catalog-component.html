@@ -8,6 +8,9 @@
     </div>
   </header>
 
+  <app-product-filter-component [(searchQuery)]="searchTerm"
+                                [(selectedCategory)]="categoryType"/>
+
   @if (lastViewedProduct(); as product){
     <div class="alert alert-info alert-dismissible
     fade show mb-4" role="alert">
@@ -21,7 +24,7 @@
   }
 
   <div class="row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-    @for (item of products(); track item.id){
+    @for (item of filteredProducts(); track item.id){
       <div class="col">
         <app-product-card-component
           (viewDetails)="onProductDetails($event)"

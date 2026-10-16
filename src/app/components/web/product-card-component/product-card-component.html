@@ -24,6 +24,13 @@
       <div class="alert alert-danger py-2 fs-6" role="alert">
         ¡Agotado! No puedes añadir más unidades.
       </div>
+    } @else {
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <label class="fs-7 text-muted">Cant:</label>
+        <app-quantity-stepper-component
+          [(quantity)]="selectedQuantity"
+          [maxStock]="product().stock"/>
+      </div>
     }
 
 

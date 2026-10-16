@@ -1,4 +1,4 @@
-import { Component, model } from '@angular/core';
+import { Component, input, model } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,15 +7,17 @@ import { Component, model } from '@angular/core';
   templateUrl: './quantity-stepper-component.html',
 })
 export class QuantityStepperComponent {
-  value = model.required<number>();
+  quantity = model.required<number>();
+  maxStock = input<number>(Infinity);
+
 
   decrement() {
-    if (this.value() > 1) {
-      this.value.update(val => val -1);
+    if (this.quantity() > 1) {
+      this.quantity.update(val => val -1);
     }
   }
   increment() {
-      this.value.update(val => val + 1);
+      this.quantity.update(val => val + 1);
   }
 
 }
