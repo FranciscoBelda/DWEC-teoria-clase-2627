@@ -1,9 +1,10 @@
-import { Component, computed, signal } from '@angular/core';
-import { Product } from '../../../models/models';
+import { Component, computed, inject, signal } from '@angular/core';
+import { CartItem, Product } from '../../../models/models';
 import { PRODUCTS_MOCK } from '../../../models/product.mock';
 import { ProductCardComponent } from '../product-card-component/product-card-component';
 import { CurrencyPipe } from '@angular/common';
 import { ProductFilterComponent } from '../product-filter-component/product-filter-component';
+import { CartService } from '../../../services/cart-service';
 
 @Component({
   imports: [ProductCardComponent, CurrencyPipe, ProductFilterComponent],
@@ -12,6 +13,8 @@ import { ProductFilterComponent } from '../product-filter-component/product-filt
   templateUrl: './catalog-component.html',
 })
 export class CatalogComponent {
+  private readonly cartService: CartService =
+  inject(CartService);
   products = signal<Product[]>(PRODUCTS_MOCK);
 
   // EJERCICIOS SESIÓN 10
@@ -29,15 +32,16 @@ export class CatalogComponent {
     });
   });
 
-  reduceStock(product: Product) {
+  reduceStock(cartItem: CartItem) {
     this.products.update((currentProducts) =>
       currentProducts.map((prod) => {
-        if (prod.id === product.id && prod.stock > 0) {
-          return { ...prod, stock: prod.stock - 1 };
+        if (prod.id === cartItem.product.id && prod.stock > 0) {
+          return { ...prod, stock: prod.stock - cartItem.quantity };
         }
         return prod;
       }),
     );
+    this.cartService.addProduct(cartItem);
   }
 
   selectedCount = signal(0);

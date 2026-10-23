@@ -56,10 +56,17 @@
       </ul>
 
       <div class="d-flex ms-auto">
-        <button class="btn btn-outline-secondary position-relative">
-          Ver carrito
-          <span class="position-absolute top-0 start-100
-          translate-middle badge rounded-pill bg-danger">0</span>
+        <button (click)="onOpenCart()"
+          class="btn btn-outline-secondary position-relative d-flex align-items-center gap-2"
+        >
+          <span>🛒</span>
+          @if (cartService.totalItems() > 0){
+            <span class="position-absolute top-0 start-100
+          translate-middle badge rounded-pill bg-danger shadow">
+              {{cartService.totalItems()}}
+            </span>
+          }
+
         </button>
       </div>
 
